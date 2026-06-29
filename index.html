@@ -41,24 +41,18 @@
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      transition: background 0.3s, color 0.3s;
+      background: var(--bg); color: var(--text);
+      overflow-x: hidden; transition: background 0.3s, color 0.3s;
     }
-
     .accent { color: var(--accent); }
 
     /* ── NAVBAR ── */
     .navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: var(--navbar-bg);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.3s;
+      background: var(--navbar-bg); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border); transition: background 0.3s;
     }
     .nav-container {
       max-width: 1200px; margin: 0 auto;
@@ -70,293 +64,127 @@
     .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
-    .btn-nav {
-      background: var(--primary) !important; color: #fff !important;
-      padding: 8px 20px; border-radius: 50px;
-    }
-    .btn-nav:hover { background: var(--primary-dark) !important; color: #fff !important; }
-
+    .btn-nav { background: var(--primary) !important; color: #fff !important; padding: 8px 20px; border-radius: 50px; }
+    .btn-nav:hover { background: var(--primary-dark) !important; }
     .nav-controls { display: flex; align-items: center; gap: 10px; }
-
-    /* Lang Toggle */
-    .lang-toggle {
-      display: flex; align-items: center;
-      background: var(--bg3); border: 1px solid var(--border);
-      border-radius: 50px; padding: 4px; gap: 2px;
-    }
-    .lang-btn {
-      padding: 5px 12px; border-radius: 50px; border: none;
-      background: transparent; color: var(--text-muted);
-      font-size: 0.78rem; font-weight: 700; cursor: pointer;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      transition: all 0.2s;
-    }
-    .lang-btn.active {
-      background: var(--primary); color: #fff;
-    }
-
-    /* Theme Toggle */
-    .theme-btn {
-      width: 38px; height: 38px; border-radius: 50%;
-      border: 1px solid var(--border);
-      background: var(--bg3); color: var(--text);
-      font-size: 1rem; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s;
-    }
+    .lang-toggle { display: flex; align-items: center; background: var(--bg3); border: 1px solid var(--border); border-radius: 50px; padding: 4px; gap: 2px; }
+    .lang-btn { padding: 5px 12px; border-radius: 50px; border: none; background: transparent; color: var(--text-muted); font-size: 0.78rem; font-weight: 700; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: all 0.2s; }
+    .lang-btn.active { background: var(--primary); color: #fff; }
+    .theme-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg3); color: var(--text); font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
     .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
-
-    .hamburger {
-      display: none; background: none; border: none;
-      color: var(--text); font-size: 1.4rem; cursor: pointer;
-    }
-    .mobile-menu {
-      display: none; flex-direction: column; padding: 16px 24px;
-      background: var(--bg2); border-top: 1px solid var(--border);
-    }
+    .hamburger { display: none; background: none; border: none; color: var(--text); font-size: 1.4rem; cursor: pointer; }
+    .mobile-menu { display: none; flex-direction: column; padding: 16px 24px; background: var(--bg2); border-top: 1px solid var(--border); }
     .mobile-menu.open { display: flex; }
     .mobile-menu a { color: var(--text-muted); text-decoration: none; padding: 10px 0; font-weight: 600; border-bottom: 1px solid var(--border); }
     .mobile-menu a:last-child { border-bottom: none; }
 
     /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 120px 80px 80px;
-      position: relative; overflow: hidden; gap: 40px;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 20% 50%, rgba(232,66,10,0.15) 0%, transparent 60%),
-                  radial-gradient(ellipse at 80% 20%, rgba(255,166,48,0.08) 0%, transparent 50%);
-    }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 120px 80px 80px; position: relative; overflow: hidden; gap: 40px; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(232,66,10,0.15) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(255,166,48,0.08) 0%, transparent 50%); }
     .hero-content { position: relative; z-index: 1; max-width: 580px; }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(232,66,10,0.15); border: 1px solid rgba(232,66,10,0.3);
-      color: var(--accent); padding: 6px 16px; border-radius: 50px;
-      font-size: 0.85rem; font-weight: 700; margin-bottom: 24px;
-    }
-    .hero-content h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 800; line-height: 1.1; margin-bottom: 20px;
-    }
-    .hero-content p {
-      font-size: 1.1rem; color: var(--text-muted);
-      line-height: 1.7; margin-bottom: 36px;
-    }
+    .hero-badge { display: inline-block; background: rgba(232,66,10,0.15); border: 1px solid rgba(232,66,10,0.3); color: var(--accent); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-bottom: 24px; }
+    .hero-content h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+    .hero-content p { font-size: 1.1rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 36px; }
     .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
-    .btn-primary {
-      background: var(--primary); color: #fff;
-      padding: 14px 32px; border-radius: 50px;
-      text-decoration: none; font-weight: 700; font-size: 0.95rem;
-      transition: all 0.2s; box-shadow: 0 4px 24px rgba(232,66,10,0.35);
-    }
+    .btn-primary { background: var(--primary); color: #fff; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 4px 24px rgba(232,66,10,0.35); }
     .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
-    .btn-secondary {
-      background: var(--bg3); color: var(--text);
-      padding: 14px 32px; border-radius: 50px;
-      text-decoration: none; font-weight: 700; font-size: 0.95rem;
-      border: 1px solid var(--border); transition: all 0.2s;
-    }
+    .btn-secondary { background: var(--bg3); color: var(--text); padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; border: 1px solid var(--border); transition: all 0.2s; }
     .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-
     .hero-stats { display: flex; align-items: center; gap: 24px; }
     .stat { display: flex; flex-direction: column; }
     .stat-num { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
     .stat-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; }
     .stat-divider { width: 1px; height: 40px; background: var(--border); }
-
     .hero-visual { position: relative; width: 380px; flex-shrink: 0; height: 420px; }
-    .floating-card {
-      position: absolute;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px 18px;
-      font-size: 0.85rem; font-weight: 600;
-      color: var(--text); width: 240px;
-      box-shadow: 0 8px 32px var(--shadow);
-      animation: float 3s ease-in-out infinite;
-    }
+    .floating-card { position: absolute; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 18px; font-size: 0.85rem; font-weight: 600; color: var(--text); width: 240px; box-shadow: 0 8px 32px var(--shadow); animation: float 3s ease-in-out infinite; }
     .card1 { top: 0; left: 0; animation-delay: 0s; }
     .card2 { top: 100px; right: 0; animation-delay: 0.8s; }
     .card3 { top: 220px; left: 20px; animation-delay: 1.6s; }
     .card4 { top: 330px; right: 10px; animation-delay: 0.4s; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
     /* ── SECTIONS ── */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     section { padding: 100px 0; }
-    .section-label {
-      display: inline-block;
-      color: var(--primary); font-weight: 700; font-size: 0.8rem;
-      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
-    }
+    .section-label { display: inline-block; color: var(--primary); font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
     section h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; margin-bottom: 16px; }
     .section-desc { color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 600px; margin-bottom: 48px; }
 
     /* ── ABOUT ── */
     .about { background: var(--bg2); }
     .about-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 48px; }
-    .about-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 16px; padding: 32px 28px;
-      transition: all 0.3s; cursor: default;
-      box-shadow: 0 2px 12px var(--shadow);
-    }
+    .about-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px 28px; transition: all 0.3s; cursor: default; box-shadow: 0 2px 12px var(--shadow); }
     .about-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(232,66,10,0.15); }
     .about-icon { font-size: 2.2rem; margin-bottom: 16px; }
     .about-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
     .about-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
 
-    /* ── THREAD CARDS ── */
-    .thread-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 48px; }
-    .thread-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 16px; padding: 28px;
-      transition: all 0.3s; position: relative; overflow: hidden;
-      box-shadow: 0 2px 12px var(--shadow);
-    }
-    .thread-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      opacity: 0; transition: opacity 0.3s;
-    }
-    .thread-card:hover { border-color: rgba(232,66,10,0.3); transform: translateY(-4px); }
-    .thread-card:hover::before { opacity: 1; }
-    .thread-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
-    .thread-tag {
-      background: rgba(232,66,10,0.12); color: var(--primary);
-      padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700;
-    }
-    .thread-likes { color: var(--text-muted); font-size: 0.8rem; }
-    .thread-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; line-height: 1.5; }
-    .thread-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px; }
-    .thread-footer { display: flex; align-items: center; justify-content: space-between; }
+    /* ── THREAD CARDS WITH PHOTO ── */
+    .thread-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 48px; }
+    .thread-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: all 0.3s; position: relative; box-shadow: 0 2px 12px var(--shadow); display: flex; flex-direction: column; }
+    .thread-card:hover { border-color: rgba(232,66,10,0.4); transform: translateY(-6px); box-shadow: 0 16px 48px var(--shadow); }
+    .thread-img { width: 100%; height: 200px; object-fit: cover; display: block; transition: transform 0.4s; }
+    .thread-card:hover .thread-img { transform: scale(1.04); }
+    .thread-img-wrap { overflow: hidden; position: relative; }
+    .thread-img-tag { position: absolute; top: 12px; left: 12px; background: rgba(232,66,10,0.92); color: #fff; padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; backdrop-filter: blur(4px); }
+    .thread-img-likes { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 10px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; backdrop-filter: blur(4px); }
+    .thread-body { padding: 22px 24px; flex: 1; display: flex; flex-direction: column; }
+    .thread-card h3 { font-size: 0.97rem; font-weight: 700; margin-bottom: 10px; line-height: 1.55; color: var(--text); }
+    .thread-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.65; margin-bottom: 20px; flex: 1; }
+    .thread-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--border); }
     .thread-author { display: flex; align-items: center; gap: 8px; }
-    .avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; background: var(--bg3); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; background: var(--bg3); flex-shrink: 0; }
     .author-name { font-size: 0.82rem; font-weight: 600; }
     .thread-time { font-size: 0.78rem; color: var(--text-muted); }
+    .thread-read-more { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; color: var(--primary); font-size: 0.82rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: gap 0.2s; }
+    .thread-read-more:hover { gap: 10px; }
 
     /* ── GALLERY ── */
     .gallery { background: var(--bg); }
-    .gallery-filter {
-      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;
-    }
-    .filter-btn {
-      padding: 8px 20px; border-radius: 50px;
-      border: 1px solid var(--border);
-      background: var(--bg3); color: var(--text-muted);
-      font-size: 0.82rem; font-weight: 700;
-      cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;
-      transition: all 0.2s;
-    }
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--primary); color: #fff; border-color: var(--primary);
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 200px;
-      gap: 16px;
-    }
-    .gallery-item {
-      border-radius: 16px; overflow: hidden;
-      position: relative; cursor: pointer;
-      transition: all 0.3s;
-    }
+    .gallery-filter { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+    .filter-btn { padding: 8px 20px; border-radius: 50px; border: 1px solid var(--border); background: var(--bg3); color: var(--text-muted); font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: all 0.2s; }
+    .filter-btn:hover, .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 16px; }
+    .gallery-item { border-radius: 16px; overflow: hidden; position: relative; cursor: pointer; transition: all 0.3s; }
     .gallery-item.wide { grid-column: span 2; }
     .gallery-item.tall { grid-row: span 2; }
     .gallery-item:hover { transform: scale(1.02); z-index: 2; }
     .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-bg {
-      width: 100%; height: 100%;
-      transition: transform 0.4s;
-    }
+    .gallery-bg { width: 100%; height: 100%; transition: transform 0.4s; }
     .gallery-item:hover .gallery-bg { transform: scale(1.05); }
-    .gallery-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%);
-      opacity: 0; transition: opacity 0.3s;
-      display: flex; flex-direction: column;
-      justify-content: flex-end; padding: 20px;
-    }
+    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, transparent 55%); opacity: 0; transition: opacity 0.3s; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; }
     .gallery-overlay h4 { color: #fff; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
     .gallery-overlay span { color: rgba(255,255,255,0.7); font-size: 0.78rem; }
-    .gallery-tag {
-      position: absolute; top: 12px; left: 12px;
-      background: rgba(232,66,10,0.9);
-      color: #fff; padding: 3px 10px;
-      border-radius: 50px; font-size: 0.72rem; font-weight: 700;
-    }
+    .gallery-tag { position: absolute; top: 12px; left: 12px; background: rgba(232,66,10,0.9); color: #fff; padding: 3px 10px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; }
 
     /* Lightbox */
-    .lightbox {
-      display: none; position: fixed; inset: 0; z-index: 9999;
-      background: rgba(0,0,0,0.92);
-      align-items: center; justify-content: center;
-      backdrop-filter: blur(8px);
-    }
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; backdrop-filter: blur(8px); }
     .lightbox.open { display: flex; }
-    .lightbox-content {
-      position: relative; max-width: 800px; width: 90%;
-      animation: zoomIn 0.3s ease;
-    }
+    .lightbox-content { position: relative; max-width: 820px; width: 92%; animation: zoomIn 0.3s ease; }
     @keyframes zoomIn { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-    .lightbox-img {
-      width: 100%; border-radius: 20px;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
-    }
-    .lightbox-info {
-      background: rgba(15,15,15,0.9); border-radius: 0 0 20px 20px;
-      padding: 20px 24px; margin-top: -8px;
-    }
+    .lightbox-img { width: 100%; border-radius: 20px 20px 0 0; box-shadow: 0 24px 80px rgba(0,0,0,0.6); display: block; max-height: 65vh; object-fit: cover; }
+    .lightbox-info { background: rgba(15,15,15,0.95); border-radius: 0 0 20px 20px; padding: 20px 24px; }
     .lightbox-info h3 { color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
     .lightbox-info p { color: rgba(255,255,255,0.6); font-size: 0.88rem; }
-    .lightbox-close {
-      position: absolute; top: -16px; right: -16px;
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--primary); color: #fff;
-      border: none; font-size: 1.2rem; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s;
-    }
+    .lightbox-close { position: absolute; top: -16px; right: -16px; width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: #fff; border: none; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
     .lightbox-close:hover { background: var(--primary-dark); transform: scale(1.1); }
 
     /* ── AREAS ── */
     .areas { background: var(--bg2); }
     .areas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-top: 48px; }
-    .area-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 16px; padding: 24px 20px;
-      text-align: center; transition: all 0.3s; cursor: default;
-      box-shadow: 0 2px 12px var(--shadow);
-    }
+    .area-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px 20px; text-align: center; transition: all 0.3s; cursor: default; box-shadow: 0 2px 12px var(--shadow); }
     .area-card:hover { border-color: var(--accent); transform: translateY(-4px); }
     .area-emoji { font-size: 2rem; margin-bottom: 12px; }
     .area-name { font-size: 0.92rem; font-weight: 700; margin-bottom: 6px; }
     .area-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
 
     /* ── JOIN ── */
-    .join {
-      background: linear-gradient(135deg, rgba(232,66,10,0.1) 0%, rgba(255,166,48,0.06) 100%);
-      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-      text-align: center; padding: 100px 24px;
-    }
+    .join { background: linear-gradient(135deg, rgba(232,66,10,0.1) 0%, rgba(255,166,48,0.06) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; padding: 100px 24px; }
     .join-emoji { font-size: 4rem; margin-bottom: 24px; }
     .join-content h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 16px; }
     .join-content > p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; }
     .join-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-join {
-      display: flex; align-items: center; gap: 10px;
-      padding: 14px 28px; border-radius: 50px;
-      text-decoration: none; font-weight: 700; font-size: 0.95rem;
-      transition: all 0.2s;
-    }
+    .btn-join { display: flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; }
     .btn-join.twitter { background: #000; color: #fff; border: 1px solid #333; }
     .btn-join.twitter:hover { background: #111; transform: translateY(-2px); }
     .btn-join.telegram { background: #229ED9; color: #fff; }
@@ -375,27 +203,13 @@
     .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
     .footer-links a:hover { color: var(--accent); }
 
-    /* WA Float Button */
-    .wa-float {
-      position: fixed; bottom: 28px; right: 28px; z-index: 999;
-      width: 58px; height: 58px; border-radius: 50%;
-      background: #25D366; color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; text-decoration: none;
-      box-shadow: 0 4px 24px rgba(37,211,102,0.45);
-      animation: pulse-wa 2s infinite;
-      transition: transform 0.2s;
-    }
+    /* WA Float */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25D366; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; text-decoration: none; box-shadow: 0 4px 24px rgba(37,211,102,0.45); animation: pulse-wa 2s infinite; transition: transform 0.2s; }
     .wa-float:hover { transform: scale(1.12); }
-    @keyframes pulse-wa {
-      0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.45); }
-      50% { box-shadow: 0 4px 40px rgba(37,211,102,0.75); }
-    }
+    @keyframes pulse-wa { 0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.45); } 50% { box-shadow: 0 4px 40px rgba(37,211,102,0.75); } }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-    }
+    @media (max-width: 1024px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 900px) {
       .hero { flex-direction: column; padding: 120px 24px 60px; text-align: center; align-items: center; }
       .hero-visual { display: none; }
@@ -411,17 +225,16 @@
       .areas-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
       .lang-btn { padding: 5px 8px; font-size: 0.72rem; }
+      .thread-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- WA FLOAT BUTTON -->
   <a href="https://wa.me/6281234567890" target="_blank" class="wa-float" title="Chat WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox-content">
       <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
@@ -497,28 +310,12 @@
     <div class="container">
       <div class="section-label" data-i18n="about_label">Tentang Kami</div>
       <h2 data-i18n="about_title">Apa itu <span class="accent">Jaktim Thread?</span></h2>
-      <p class="section-desc" data-i18n="about_desc">Jakarta Timur Thread adalah komunitas online bagi siapa saja yang tinggal, pernah tinggal, atau cinta sama Jakarta Timur. Dari info banjir, rekomendasi makan, sampai cerita receh sehari-hari — semua dibahas di sini.</p>
+      <p class="section-desc" data-i18n="about_desc">Jakarta Timur Thread adalah komunitas online bagi siapa saja yang tinggal, pernah tinggal, atau cinta sama Jakarta Timur.</p>
       <div class="about-cards">
-        <div class="about-card">
-          <div class="about-icon">📍</div>
-          <h3 data-i18n="about_c1_title">Hyperlokal</h3>
-          <p data-i18n="about_c1_desc">Informasi spesifik per kelurahan dan kecamatan di Jaktim, bukan info Jakarta secara umum.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🧵</div>
-          <h3 data-i18n="about_c2_title">Thread Berkualitas</h3>
-          <p data-i18n="about_c2_desc">Konten berupa thread panjang yang informatif, dari kuliner, sejarah, hingga tips kehidupan warga Jaktim.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🤝</div>
-          <h3 data-i18n="about_c3_title">Komunitas Solid</h3>
-          <p data-i18n="about_c3_desc">Saling bantu sesama warga, share info, dan nongkrong bareng di berbagai event komunitas.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🔔</div>
-          <h3 data-i18n="about_c4_title">Real-time Info</h3>
-          <p data-i18n="about_c4_desc">Update cepat soal kondisi jalan, banjir, kebakaran, dan kejadian penting di sekitar Jaktim.</p>
-        </div>
+        <div class="about-card"><div class="about-icon">📍</div><h3 data-i18n="about_c1_title">Hyperlokal</h3><p data-i18n="about_c1_desc">Informasi spesifik per kelurahan dan kecamatan di Jaktim.</p></div>
+        <div class="about-card"><div class="about-icon">🧵</div><h3 data-i18n="about_c2_title">Thread Berkualitas</h3><p data-i18n="about_c2_desc">Konten thread panjang yang informatif dari kuliner, sejarah, hingga tips warga.</p></div>
+        <div class="about-card"><div class="about-icon">🤝</div><h3 data-i18n="about_c3_title">Komunitas Solid</h3><p data-i18n="about_c3_desc">Saling bantu sesama warga dan nongkrong bareng di event komunitas.</p></div>
+        <div class="about-card"><div class="about-icon">🔔</div><h3 data-i18n="about_c4_title">Real-time Info</h3><p data-i18n="about_c4_desc">Update cepat kondisi jalan, banjir, dan kejadian penting di Jaktim.</p></div>
       </div>
     </div>
   </section>
@@ -571,179 +368,265 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-content">
-      <div class="footer-logo">
-        <span class="logo-icon">🧵</span>
-        <span class="logo-text">Jaktim<span class="accent">Thread</span></span>
-      </div>
+      <div class="footer-logo"><span class="logo-icon">🧵</span><span class="logo-text">Jaktim<span class="accent">Thread</span></span></div>
       <p data-i18n="footer_copy">© 2025 Jakarta Timur Thread Community. Dibuat dengan ❤️ oleh warga Jaktim.</p>
       <div class="footer-links">
-        <a href="#">Twitter/X</a>
-        <a href="#">Telegram</a>
-        <a href="#">Instagram</a>
-        <a href="#">WhatsApp</a>
+        <a href="#">Twitter/X</a><a href="#">Telegram</a><a href="#">Instagram</a><a href="#">WhatsApp</a>
       </div>
     </div>
   </footer>
 
   <script>
   // ═══════════════════════════════════════════════
-  //  i18n TRANSLATIONS
+  //  i18n
   // ═══════════════════════════════════════════════
   const i18n = {
     id: {
-      nav_about: "Tentang", nav_highlights: "Highlights",
-      nav_gallery: "Gallery", nav_areas: "Wilayah", nav_join: "Gabung",
-      hero_desc: "Komunitas warga, pecinta, dan perantau Jakarta Timur.<br/>Cerita, info, kuliner, hingga drama BKT — semua ada di sini.",
-      hero_btn1: "Gabung Komunitas", hero_btn2: "Lihat Thread",
-      stat_member: "Anggota", stat_thread: "Thread", stat_area: "Kecamatan",
-      about_label: "Tentang Kami",
-      about_title: "Apa itu <span class='accent'>Jaktim Thread?</span>",
-      about_desc: "Jakarta Timur Thread adalah komunitas online bagi siapa saja yang tinggal, pernah tinggal, atau cinta sama Jakarta Timur. Dari info banjir, rekomendasi makan, sampai cerita receh sehari-hari — semua dibahas di sini.",
-      about_c1_title: "Hyperlokal", about_c1_desc: "Informasi spesifik per kelurahan dan kecamatan di Jaktim, bukan info Jakarta secara umum.",
-      about_c2_title: "Thread Berkualitas", about_c2_desc: "Konten berupa thread panjang yang informatif, dari kuliner, sejarah, hingga tips kehidupan warga Jaktim.",
-      about_c3_title: "Komunitas Solid", about_c3_desc: "Saling bantu sesama warga, share info, dan nongkrong bareng di berbagai event komunitas.",
-      about_c4_title: "Real-time Info", about_c4_desc: "Update cepat soal kondisi jalan, banjir, kebakaran, dan kejadian penting di sekitar Jaktim.",
-      thread_label: "Thread Populer", thread_title: "Highlights", thread_title2: "Komunitas",
-      gallery_label: "Galeri", gallery_title: "Momen", gallery_title2: "Jaktim",
-      gallery_desc: "Foto-foto terbaik dari komunitas, event, kuliner, dan sudut-sudut indah Jakarta Timur.",
-      areas_label: "Jelajahi", areas_title: "Kecamatan",
-      areas_desc: "Masing-masing punya karakter, kuliner, dan cerita uniknya sendiri.",
-      join_title: "Siap Gabung", join_desc: "Bergabunglah dengan ribuan warga Jaktim di komunitas kami. Gratis, seru, dan penuh info bermanfaat!",
-      join_twitter: "Follow di X", join_telegram: "Grup Telegram", join_wa: "Grup WhatsApp",
-      footer_copy: "© 2025 Jakarta Timur Thread Community. Dibuat dengan ❤️ oleh warga Jaktim."
+      nav_about:"Tentang", nav_highlights:"Highlights", nav_gallery:"Gallery", nav_areas:"Wilayah", nav_join:"Gabung",
+      hero_desc:"Komunitas warga, pecinta, dan perantau Jakarta Timur.<br/>Cerita, info, kuliner, hingga drama BKT — semua ada di sini.",
+      hero_btn1:"Gabung Komunitas", hero_btn2:"Lihat Thread",
+      stat_member:"Anggota", stat_thread:"Thread", stat_area:"Kecamatan",
+      about_label:"Tentang Kami", about_title:"Apa itu <span class='accent'>Jaktim Thread?</span>",
+      about_desc:"Jakarta Timur Thread adalah komunitas online bagi siapa saja yang tinggal, pernah tinggal, atau cinta sama Jakarta Timur.",
+      about_c1_title:"Hyperlokal", about_c1_desc:"Informasi spesifik per kelurahan dan kecamatan di Jaktim.",
+      about_c2_title:"Thread Berkualitas", about_c2_desc:"Konten thread panjang yang informatif dari kuliner, sejarah, hingga tips warga.",
+      about_c3_title:"Komunitas Solid", about_c3_desc:"Saling bantu sesama warga dan nongkrong bareng di event komunitas.",
+      about_c4_title:"Real-time Info", about_c4_desc:"Update cepat kondisi jalan, banjir, dan kejadian penting di Jaktim.",
+      thread_label:"Thread Populer", thread_title:"Highlights", thread_title2:"Komunitas",
+      gallery_label:"Galeri", gallery_title:"Momen", gallery_title2:"Jaktim",
+      gallery_desc:"Foto-foto terbaik dari komunitas, event, kuliner, dan sudut-sudut indah Jakarta Timur.",
+      areas_label:"Jelajahi", areas_title:"Kecamatan", areas_desc:"Masing-masing punya karakter, kuliner, dan cerita uniknya sendiri.",
+      join_title:"Siap Gabung", join_desc:"Bergabunglah dengan ribuan warga Jaktim di komunitas kami. Gratis, seru, dan penuh info bermanfaat!",
+      join_twitter:"Follow di X", join_telegram:"Grup Telegram", join_wa:"Grup WhatsApp",
+      footer_copy:"© 2025 Jakarta Timur Thread Community. Dibuat dengan ❤️ oleh warga Jaktim."
     },
     en: {
-      nav_about: "About", nav_highlights: "Highlights",
-      nav_gallery: "Gallery", nav_areas: "Districts", nav_join: "Join",
-      hero_desc: "A community for residents, lovers, and migrants of East Jakarta.<br/>Stories, info, food, and BKT drama — all here.",
-      hero_btn1: "Join Community", hero_btn2: "See Threads",
-      stat_member: "Members", stat_thread: "Threads", stat_area: "Districts",
-      about_label: "About Us",
-      about_title: "What is <span class='accent'>Jaktim Thread?</span>",
-      about_desc: "Jaktim Thread is an online community for anyone who lives, has lived, or loves East Jakarta. From flood info, food recommendations, to daily life stories — everything is discussed here.",
-      about_c1_title: "Hyper-local", about_c1_desc: "Specific information per village and district in East Jakarta, not just general Jakarta news.",
-      about_c2_title: "Quality Threads", about_c2_desc: "Long, informative threads about food, history, and everyday tips for East Jakarta residents.",
-      about_c3_title: "Solid Community", about_c3_desc: "Help each other, share info, and hang out together at community events.",
-      about_c4_title: "Real-time Info", about_c4_desc: "Quick updates on road conditions, floods, fires, and important events around East Jakarta.",
-      thread_label: "Popular Threads", thread_title: "Community", thread_title2: "Highlights",
-      gallery_label: "Gallery", gallery_title: "Moments of", gallery_title2: "Jaktim",
-      gallery_desc: "Best photos from the community, events, food, and beautiful corners of East Jakarta.",
-      areas_label: "Explore", areas_title: "Districts",
-      areas_desc: "Each has its own unique character, food, and stories.",
-      join_title: "Ready to Join", join_desc: "Join thousands of East Jakarta residents in our community. Free, fun, and full of useful info!",
-      join_twitter: "Follow on X", join_telegram: "Telegram Group", join_wa: "WhatsApp Group",
-      footer_copy: "© 2025 Jakarta Timur Thread Community. Made with ❤️ by Jaktim residents."
+      nav_about:"About", nav_highlights:"Highlights", nav_gallery:"Gallery", nav_areas:"Districts", nav_join:"Join",
+      hero_desc:"A community for residents, lovers, and migrants of East Jakarta.<br/>Stories, info, food, and BKT drama — all here.",
+      hero_btn1:"Join Community", hero_btn2:"See Threads",
+      stat_member:"Members", stat_thread:"Threads", stat_area:"Districts",
+      about_label:"About Us", about_title:"What is <span class='accent'>Jaktim Thread?</span>",
+      about_desc:"Jaktim Thread is an online community for anyone who lives, has lived, or loves East Jakarta.",
+      about_c1_title:"Hyper-local", about_c1_desc:"Specific info per village and district in East Jakarta.",
+      about_c2_title:"Quality Threads", about_c2_desc:"Long informative threads about food, history, and everyday tips.",
+      about_c3_title:"Solid Community", about_c3_desc:"Help each other and hang out together at community events.",
+      about_c4_title:"Real-time Info", about_c4_desc:"Quick updates on road conditions, floods, and important events.",
+      thread_label:"Popular Threads", thread_title:"Community", thread_title2:"Highlights",
+      gallery_label:"Gallery", gallery_title:"Moments of", gallery_title2:"Jaktim",
+      gallery_desc:"Best photos from the community, events, food, and beautiful corners of East Jakarta.",
+      areas_label:"Explore", areas_title:"Districts", areas_desc:"Each has its own unique character, food, and stories.",
+      join_title:"Ready to Join", join_desc:"Join thousands of East Jakarta residents in our community. Free, fun, and full of useful info!",
+      join_twitter:"Follow on X", join_telegram:"Telegram Group", join_wa:"WhatsApp Group",
+      footer_copy:"© 2025 Jakarta Timur Thread Community. Made with ❤️ by Jaktim residents."
     }
   };
 
   let currentLang = 'id';
-
   function setLang(lang) {
     currentLang = lang;
-    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      if (btn.textContent === lang.toUpperCase()) btn.classList.add('active');
+      btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
     });
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
     });
-    renderThreads();
-    renderAreas();
+    renderThreads(); renderAreas(); renderGalleryFilter(); renderGallery();
   }
 
   // ═══════════════════════════════════════════════
-  //  THEME TOGGLE
+  //  THEME
   // ═══════════════════════════════════════════════
-  const themeBtn = document.getElementById('themeBtn');
   let isDark = true;
-
-  themeBtn.addEventListener('click', () => {
+  document.getElementById('themeBtn').addEventListener('click', () => {
     isDark = !isDark;
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-    themeBtn.textContent = isDark ? '🌙' : '☀️';
+    document.getElementById('themeBtn').textContent = isDark ? '🌙' : '☀️';
   });
 
   // ═══════════════════════════════════════════════
-  //  DATA
+  //  THREAD DATA — 10 threads dengan foto Unsplash
   // ═══════════════════════════════════════════════
   const threadsData = {
     id: [
-      { tag: "Kuliner", likes: "2.4K ❤️", title: "Thread: 10 Warung Bakso Legendaris di Jakarta Timur yang Wajib Dicoba 🍜", desc: "Dari bakso urat jumbo di Cipinang sampai bakso beranak di Rawamangun, ini dia daftar lengkapnya yang udah aku riset selama 2 bulan...", avatar: "👨‍🍳", author: "@kulinerjaktim", time: "2 jam lalu" },
-      { tag: "Info", likes: "1.8K 🔁", title: "⚠️ Update: Kondisi Kalimalang pagi ini — macet total dari Bekasi Barat sampai Cawang", desc: "Ada kecelakaan truk di KM 12. Alternatif: lewat Jl. Raya Bogor atau naik LRT dari Jatimulya. Stay safe guys!", avatar: "🚦", author: "@infojaktim", time: "45 menit lalu" },
-      { tag: "Nostalgia", likes: "5.1K ❤️", title: "Thread: Kenangan Masa Kecil di BKT — Dari Mancing Sampai Nonton Pertandingan 🌊", desc: "Siapa yang masa kecilnya habis di pinggir BKT? Aku mau cerita pengalaman tumbuh besar di Duren Sawit dan semua memorinya...", avatar: "🎣", author: "@wargajaktim", time: "1 hari lalu" },
-      { tag: "Hidden Gem", likes: "3.2K ❤️", title: "Kafe Anti-Mainstream di Rawamangun yang Belum Banyak Orang Tau ☕", desc: "Udah capek kafe yang itu-itu aja? Ini aku share 7 hidden gem kafe di sekitar Rawamangun yang estetik, wifi kenceng, dan harga pelajar!", avatar: "☕", author: "@explorejaktim", time: "3 hari lalu" },
-      { tag: "Sejarah", likes: "4.7K 🔁", title: "Thread: Sejarah Tersembunyi Halim Perdanakusuma — Dari Perang hingga Bandara ✈️", desc: "Tau gak kalau Halim dulu punya peran penting di berbagai momen bersejarah Indonesia? Ayo kita bahas satu per satu...", avatar: "✈️", author: "@historyjaktim", time: "5 hari lalu" },
-      { tag: "Komunitas", likes: "900 ❤️", title: "Kopdar Perdana Jaktim Thread — Recap & Foto-Foto! 📸", desc: "Alhamdulillah kemarin kopdar pertama kita sukses besar! 120+ orang hadir, penuh canda tawa, dan diskusi seru soal masa depan Jaktim...", avatar: "🤝", author: "@jaktimthread", time: "1 minggu lalu" }
+      {
+        tag:"🍜 Kuliner", likes:"4.2K ❤️",
+        title:"Thread: Mie Ayam Pak Kumis di Jatinegara — Eksis Sejak 1987 dan Masih Antri Panjang",
+        desc:"Hampir 40 tahun berjualan, warung ini gak pernah sepi. Rahasia kaldunya bikin orang rela antri 45 menit. Kita kupas tuntas sejarahnya 🍜",
+        avatar:"👨‍🍳", author:"@kulinerjaktim", time:"1 jam lalu",
+        img:"https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80"
+      },
+      {
+        tag:"🌆 Sejarah", likes:"7.8K 🔁",
+        title:"Thread: Mengapa Jakarta Timur Disebut 'Planet Jaktim'? Ini Asal-Usulnya yang Jarang Diketahui",
+        desc:"Dari stereotipe, meme, sampai jadi identitas kebanggaan. Perjalanan panjang julukan Planet Jaktim yang sekarang justru dibanggakan warganya.",
+        avatar:"📜", author:"@historyjaktim", time:"3 jam lalu",
+        img:"https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=600&q=80"
+      },
+      {
+        tag:"☕ Hidden Gem", likes:"5.1K ❤️",
+        title:"7 Kafe Rooftop di Jaktim dengan View Kota yang Bikin Melongo — No. 4 Paling Underrated",
+        desc:"Gak perlu jauh-jauh ke Menteng buat dapet vibes kafe keren. Jaktim punya beberapa rooftop cafe yang viewnya gila banget dan harganya masih masuk akal!",
+        avatar:"☕", author:"@explorejaktim", time:"5 jam lalu",
+        img:"https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&q=80"
+      },
+      {
+        tag:"🏃 Gaya Hidup", likes:"3.3K ❤️",
+        title:"BKT Jogging Track: Panduan Lengkap Olahraga Pagi di Pinggir Kanal — Rute, Spot, & Tips",
+        desc:"BKT bukan cuma buat nongkrong malam. Paginya, ratusan warga Jaktim pakai ini buat olahraga. Ini rute terbaik dari Duren Sawit sampai Pondok Bambu.",
+        avatar:"🏃", author:"@healthyjaktim", time:"8 jam lalu",
+        img:"https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=80"
+      },
+      {
+        tag:"🎭 Budaya", likes:"6.2K 🔁",
+        title:"Thread: Kesenian Betawi yang Masih Hidup di Jaktim — Dari Lenong sampai Ondel-Ondel",
+        desc:"Di tengah modernisasi, beberapa sanggar seni di Jaktim masih keukeuh melestarikan kebudayaan Betawi. Ini kisah mereka yang patut diacungi jempol 👏",
+        avatar:"🎭", author:"@budayajaktim", time:"1 hari lalu",
+        img:"https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80"
+      },
+      {
+        tag:"🚇 Transportasi", likes:"2.9K 🔁",
+        title:"LRT Jakarta vs TransJakarta vs KRL: Mana yang Lebih Worth buat Komuter Jaktim?",
+        desc:"Udah setahun LRT Velodrome-Manggarai beroperasi. Kita bandingkan 3 moda transportasi umum ini dari segi kenyamanan, waktu tempuh, dan biaya harian.",
+        avatar:"🚇", author:"@transportjaktim", time:"2 hari lalu",
+        img:"https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80"
+      },
+      {
+        tag:"🌧️ Info Penting", likes:"9.1K 🔁",
+        title:"⚠️ Peta Banjir Jaktim 2025: Kelurahan Mana Saja yang Paling Rawan & Cara Antisipasi",
+        desc:"Musim hujan datang. Ini peta lengkap titik-titik rawan banjir di 10 kecamatan Jaktim berdasarkan data BPBD, plus tips evakuasi mandiri yang wajib kalian tahu.",
+        avatar:"🌧️", author:"@infojaktim", time:"2 hari lalu",
+        img:"https://images.unsplash.com/photo-1468581264429-2548ef9eb732?w=600&q=80"
+      },
+      {
+        tag:"🎓 Edukasi", likes:"4.5K ❤️",
+        title:"Thread: Rawamangun — Kampus, Kost, dan Kehidupan Mahasiswa yang Sesungguhnya",
+        desc:"Sebagai rumah UNJ dan puluhan kampus lain, Rawamangun punya ekosistem mahasiswa yang unik. Dari kost 800 ribu sampai kafe 24 jam, ini cerita lengkapnya.",
+        avatar:"🎓", author:"@kampusjaktim", time:"3 hari lalu",
+        img:"https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80"
+      },
+      {
+        tag:"🍗 Kuliner", likes:"3.7K ❤️",
+        title:"Ayam Geprek Viral dari Gang Sempit di Pondok Bambu — Omset 5 Juta Per Hari!",
+        desc:"Siapa sangka warung kecil di gang sempit ini jadi fenomena. Pemiliknya, Pak Rudi (42), bahkan nolak tawaran waralaba berkali-kali. Ini kisah sukses dari Jaktim.",
+        avatar:"🍗", author:"@umkmjaktim", time:"4 hari lalu",
+        img:"https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80"
+      },
+      {
+        tag:"🌃 Lifestyle", likes:"5.6K ❤️",
+        title:"Malam Minggu di Jaktim: 10 Destinasi Nongkrong Kekinian yang Wajib Dicoba Tahun Ini",
+        desc:"Dari pinggir BKT yang kini makin rapih, rooftop bar Cawang, sampai pasar malam Kramat Jati yang legendaris — panduan lengkap nongkrong Jaktim untuk semua budget.",
+        avatar:"🌃", author:"@nightlifejaktim", time:"5 hari lalu",
+        img:"https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&q=80"
+      }
     ],
     en: [
-      { tag: "Food", likes: "2.4K ❤️", title: "Thread: 10 Legendary Meatball Stalls in East Jakarta You Must Try 🍜", desc: "From giant tendon meatballs in Cipinang to layered meatballs in Rawamangun, here's the complete list I researched over 2 months...", avatar: "👨‍🍳", author: "@kulinerjaktim", time: "2 hours ago" },
-      { tag: "Info", likes: "1.8K 🔁", title: "⚠️ Update: Kalimalang this morning — total gridlock from West Bekasi to Cawang", desc: "Truck accident at KM 12. Alternatives: take Jl. Raya Bogor or LRT from Jatimulya. Stay safe guys!", avatar: "🚦", author: "@infojaktim", time: "45 minutes ago" },
-      { tag: "Nostalgia", likes: "5.1K ❤️", title: "Thread: Childhood Memories at BKT — From Fishing to Watching Games 🌊", desc: "Who spent their childhood by the BKT canal? I want to share my experience growing up in Duren Sawit and all the memories...", avatar: "🎣", author: "@wargajaktim", time: "1 day ago" },
-      { tag: "Hidden Gem", likes: "3.2K ❤️", title: "Anti-Mainstream Cafes in Rawamangun Not Many People Know About ☕", desc: "Tired of the same old cafes? Here I share 7 hidden gem cafes around Rawamangun that are aesthetic, fast wifi, and student-priced!", avatar: "☕", author: "@explorejaktim", time: "3 days ago" },
-      { tag: "History", likes: "4.7K 🔁", title: "Thread: The Hidden History of Halim Perdanakusuma — From War to Airport ✈️", desc: "Did you know Halim once played an important role in various historical moments of Indonesia? Let's discuss them one by one...", avatar: "✈️", author: "@historyjaktim", time: "5 days ago" },
-      { tag: "Community", likes: "900 ❤️", title: "First Jaktim Thread Meetup — Recap & Photos! 📸", desc: "Alhamdulillah our first meetup was a huge success! 120+ people attended, full of laughs, and fun discussions about Jaktim's future...", avatar: "🤝", author: "@jaktimthread", time: "1 week ago" }
-    ]
-  };
-
-  const areasData = {
-    id: [
-      { emoji: "🎓", name: "Rawamangun", desc: "Pusat edukasi & kuliner hits" },
-      { emoji: "🏙️", name: "Cawang", desc: "Simpang transportasi utama" },
-      { emoji: "🌊", name: "Duren Sawit", desc: "Surga nongkrong BKT" },
-      { emoji: "✈️", name: "Halim", desc: "Bandara & kawasan bersejarah" },
-      { emoji: "🌿", name: "Cibubur", desc: "Residensial & alam hijau" },
-      { emoji: "🛍️", name: "Kramat Jati", desc: "Pusat perdagangan besar" },
-      { emoji: "🏘️", name: "Cipinang", desc: "Kuliner legendaris & pasar" },
-      { emoji: "🌸", name: "Matraman", desc: "Batas kota & pusat budaya" },
-      { emoji: "🎪", name: "Jatinegara", desc: "Pusat perbelanjaan rakyat" },
-      { emoji: "🏡", name: "Pulo Gadung", desc: "Kawasan industri & hunian" }
-    ],
-    en: [
-      { emoji: "🎓", name: "Rawamangun", desc: "Education hub & trendy food" },
-      { emoji: "🏙️", name: "Cawang", desc: "Major transport junction" },
-      { emoji: "🌊", name: "Duren Sawit", desc: "BKT canal hangout spot" },
-      { emoji: "✈️", name: "Halim", desc: "Airport & historic area" },
-      { emoji: "🌿", name: "Cibubur", desc: "Residential & green nature" },
-      { emoji: "🛍️", name: "Kramat Jati", desc: "Major trading center" },
-      { emoji: "🏘️", name: "Cipinang", desc: "Legendary food & market" },
-      { emoji: "🌸", name: "Matraman", desc: "City border & cultural hub" },
-      { emoji: "🎪", name: "Jatinegara", desc: "People's shopping center" },
-      { emoji: "🏡", name: "Pulo Gadung", desc: "Industrial & residential area" }
+      {
+        tag:"🍜 Food", likes:"4.2K ❤️",
+        title:"Thread: Pak Kumis's Chicken Noodle in Jatinegara — Open Since 1987, Still Always Queued",
+        desc:"Almost 40 years in business, this stall is never empty. The secret broth makes people willing to wait 45 minutes. Let's dive into its full story 🍜",
+        avatar:"👨‍🍳", author:"@kulinerjaktim", time:"1 hour ago",
+        img:"https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80"
+      },
+      {
+        tag:"🌆 History", likes:"7.8K 🔁",
+        title:"Thread: Why Is East Jakarta Called 'Planet Jaktim'? The Rarely Known Origin Story",
+        desc:"From stereotypes and memes to a badge of pride. The long journey of the Planet Jaktim nickname that residents now wear with honor.",
+        avatar:"📜", author:"@historyjaktim", time:"3 hours ago",
+        img:"https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=600&q=80"
+      },
+      {
+        tag:"☕ Hidden Gem", likes:"5.1K ❤️",
+        title:"7 Rooftop Cafes in East Jakarta with Jaw-Dropping City Views — No. 4 Most Underrated",
+        desc:"You don't need to go to Menteng for a cool cafe vibe. East Jakarta has rooftop cafes with incredible views at still reasonable prices!",
+        avatar:"☕", author:"@explorejaktim", time:"5 hours ago",
+        img:"https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&q=80"
+      },
+      {
+        tag:"🏃 Lifestyle", likes:"3.3K ❤️",
+        title:"BKT Jogging Track: Complete Guide to Morning Exercise Along the Canal — Routes, Spots & Tips",
+        desc:"BKT isn't just for evening hangouts. Mornings bring hundreds of East Jakartans here to exercise. Best routes from Duren Sawit to Pondok Bambu.",
+        avatar:"🏃", author:"@healthyjaktim", time:"8 hours ago",
+        img:"https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=80"
+      },
+      {
+        tag:"🎭 Culture", likes:"6.2K 🔁",
+        title:"Thread: Betawi Arts Still Alive in East Jakarta — From Lenong to Ondel-Ondel",
+        desc:"Amid modernization, several art studios in East Jakarta stubbornly preserve Betawi culture. Their stories deserve the spotlight 👏",
+        avatar:"🎭", author:"@budayajaktim", time:"1 day ago",
+        img:"https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80"
+      },
+      {
+        tag:"🚇 Transport", likes:"2.9K 🔁",
+        title:"LRT vs TransJakarta vs KRL: Which is Worth It for East Jakarta Commuters?",
+        desc:"A year after Velodrome-Manggarai LRT launched. We compare 3 public transport modes by comfort, travel time, and daily cost.",
+        avatar:"🚇", author:"@transportjaktim", time:"2 days ago",
+        img:"https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80"
+      },
+      {
+        tag:"🌧️ Important Info", likes:"9.1K 🔁",
+        title:"⚠️ East Jakarta Flood Map 2025: Most Vulnerable Areas & How to Prepare",
+        desc:"Rainy season is here. Complete map of flood-prone spots across 10 districts based on BPBD data, plus essential self-evacuation tips.",
+        avatar:"🌧️", author:"@infojaktim", time:"2 days ago",
+        img:"https://images.unsplash.com/photo-1468581264429-2548ef9eb732?w=600&q=80"
+      },
+      {
+        tag:"🎓 Campus Life", likes:"4.5K ❤️",
+        title:"Thread: Rawamangun — Campus, Boarding Houses, and Real Student Life",
+        desc:"As home to UNJ and dozens of other campuses, Rawamangun has a unique student ecosystem. From Rp800k boarding to 24-hour cafes.",
+        avatar:"🎓", author:"@kampusjaktim", time:"3 days ago",
+        img:"https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80"
+      },
+      {
+        tag:"🍗 Food", likes:"3.7K ❤️",
+        title:"Viral Fried Chicken from a Narrow Alley in Pondok Bambu — Rp5M Revenue Per Day!",
+        desc:"Who knew this tiny stall in a narrow alley would become a phenomenon. Owner Pak Rudi (42) even turned down franchise offers multiple times.",
+        avatar:"🍗", author:"@umkmjaktim", time:"4 days ago",
+        img:"https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80"
+      },
+      {
+        tag:"🌃 Lifestyle", likes:"5.6K ❤️",
+        title:"Saturday Night in East Jakarta: 10 Trendy Hangout Spots You Must Try This Year",
+        desc:"From the now-cleaner BKT riverside, Cawang rooftop bars, to the legendary Kramat Jati night market — a complete guide for all budgets.",
+        avatar:"🌃", author:"@nightlifejaktim", time:"5 days ago",
+        img:"https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&q=80"
+      }
     ]
   };
 
   // ═══════════════════════════════════════════════
-  //  GALLERY DATA — using picsum for placeholder photos
+  //  GALLERY DATA — Unsplash real photos
   // ═══════════════════════════════════════════════
   const galleryItems = [
-    { id:1, category:"Kuliner", tag:"🍜 Kuliner", title:"Bakso Legendaris Cipinang", desc:"Rating 4.9/5 oleh komunitas", img:"https://picsum.photos/seed/food1/800/600", wide:true },
-    { id:2, category:"Komunitas", tag:"🤝 Komunitas", title:"Kopdar Perdana Jaktim Thread", desc:"120+ anggota hadir", img:"https://picsum.photos/seed/community1/600/800", tall:true },
-    { id:3, category:"Wilayah", tag:"🌊 Wilayah", title:"Senja di BKT", desc:"Spot foto favorit warga", img:"https://picsum.photos/seed/bkt1/600/400" },
-    { id:4, category:"Kuliner", tag:"🍜 Kuliner", title:"Hidden Gem Kafe Rawamangun", desc:"Aesthetic & harga pelajar", img:"https://picsum.photos/seed/cafe1/600/400" },
-    { id:5, category:"Event", tag:"🎉 Event", title:"Festival Jaktim 2024", desc:"Ribuan warga ikut merayakan", img:"https://picsum.photos/seed/event1/800/600", wide:true },
-    { id:6, category:"Wilayah", tag:"🏙️ Wilayah", title:"Skyline Cawang Malam Hari", desc:"Golden hour di atas jembatan", img:"https://picsum.photos/seed/city1/600/400" },
-    { id:7, category:"Komunitas", tag:"🤝 Komunitas", title:"Aksi Bersih BKT", desc:"Gotong royong warga Jaktim", img:"https://picsum.photos/seed/community2/600/400" },
-    { id:8, category:"Event", tag:"🎉 Event", title:"Nonton Bareng Persija", desc:"Suporter Jaktim berkumpul", img:"https://picsum.photos/seed/sport1/600/800", tall:true },
-    { id:9, category:"Kuliner", tag:"🍜 Kuliner", title:"Pasar Cipinang Besar", desc:"Surga kuliner pagi hari", img:"https://picsum.photos/seed/market1/600/400" },
+    { id:1, category:"Kuliner", tag:"🍜 Kuliner", title:"Bakso Legendaris Cipinang", desc:"Rating 4.9/5 oleh komunitas", img:"https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80", wide:true },
+    { id:2, category:"Komunitas", tag:"🤝 Komunitas", title:"Kopdar Perdana Jaktim Thread", desc:"120+ anggota hadir", img:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80", tall:true },
+    { id:3, category:"Wilayah", tag:"🌊 Wilayah", title:"Senja di Kanal BKT", desc:"Spot foto favorit warga", img:"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" },
+    { id:4, category:"Kuliner", tag:"☕ Kuliner", title:"Hidden Gem Kafe Rawamangun", desc:"Aesthetic & harga pelajar", img:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" },
+    { id:5, category:"Event", tag:"🎉 Event", title:"Festival Kuliner Jaktim 2024", desc:"Ribuan warga ikut merayakan", img:"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80", wide:true },
+    { id:6, category:"Wilayah", tag:"🏙️ Wilayah", title:"Skyline Cawang Malam Hari", desc:"Golden hour di atas jembatan", img:"https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80" },
+    { id:7, category:"Komunitas", tag:"🤝 Komunitas", title:"Aksi Bersih BKT Bersama", desc:"Gotong royong warga Jaktim", img:"https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" },
+    { id:8, category:"Event", tag:"⚽ Event", title:"Nonton Bareng Persija di Jaktim", desc:"Suporter Jaktim berkumpul", img:"https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80", tall:true },
+    { id:9, category:"Kuliner", tag:"🍗 Kuliner", title:"Pasar Cipinang Pagi Hari", desc:"Surga kuliner pagi hari", img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" },
+    { id:10, category:"Wilayah", tag:"🌿 Wilayah", title:"Taman Hijau Cibubur", desc:"Paru-paru kota di Jaktim", img:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80" },
+    { id:11, category:"Event", tag:"🎭 Event", title:"Pentas Seni Betawi", desc:"Melestarikan budaya lokal", img:"https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80" },
+    { id:12, category:"Komunitas", tag:"🏃 Komunitas", title:"Morning Run BKT Community", desc:"Olahraga bareng tiap Minggu pagi", img:"https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80", wide:true },
   ];
 
-  const categories = ['Semua', 'Kuliner', 'Komunitas', 'Wilayah', 'Event'];
   let activeFilter = 'Semua';
 
   function renderGalleryFilter() {
     const container = document.getElementById('galleryFilter');
     const cats = currentLang === 'en'
-      ? ['All', 'Food', 'Community', 'Area', 'Event']
-      : ['Semua', 'Kuliner', 'Komunitas', 'Wilayah', 'Event'];
-    const catMap = { 'All':'Semua','Food':'Kuliner','Community':'Komunitas','Area':'Wilayah','Event':'Event', 'Semua':'Semua','Kuliner':'Kuliner','Komunitas':'Komunitas','Wilayah':'Wilayah' };
+      ? ['All','Food','Community','Area','Event']
+      : ['Semua','Kuliner','Komunitas','Wilayah','Event'];
+    const catMap = { 'All':'Semua','Food':'Kuliner','Community':'Komunitas','Area':'Wilayah','Event':'Event','Semua':'Semua','Kuliner':'Kuliner','Komunitas':'Komunitas','Wilayah':'Wilayah' };
     container.innerHTML = cats.map(c => `
       <button class="filter-btn ${(catMap[c]||c) === activeFilter ? 'active' : ''}"
-        onclick="filterGallery('${catMap[c]||c}', '${c}')">${c}</button>
+        onclick="filterGallery('${catMap[c]||c}')">${c}</button>
     `).join('');
   }
 
-  function filterGallery(filterKey, label) {
+  function filterGallery(filterKey) {
     activeFilter = filterKey;
     renderGalleryFilter();
     renderGallery();
@@ -753,9 +636,8 @@
     const grid = document.getElementById('galleryGrid');
     const filtered = activeFilter === 'Semua' ? galleryItems : galleryItems.filter(i => i.category === activeFilter);
     grid.innerHTML = filtered.map(item => `
-      <div class="gallery-item ${item.wide ? 'wide' : ''} ${item.tall ? 'tall' : ''}"
-           onclick="openLightbox(${item.id})">
-        <div class="gallery-bg" style="background: url('${item.img}') center/cover no-repeat; width:100%; height:100%;"></div>
+      <div class="gallery-item ${item.wide ? 'wide' : ''} ${item.tall ? 'tall' : ''}" onclick="openLightbox(${item.id})">
+        <div class="gallery-bg" style="background:url('${item.img}') center/cover no-repeat; width:100%; height:100%;"></div>
         <span class="gallery-tag">${item.tag}</span>
         <div class="gallery-overlay">
           <h4>${item.title}</h4>
@@ -776,45 +658,75 @@
   }
 
   document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
-  });
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  document.getElementById('lightbox').addEventListener('click', function(e) { if(e.target===this) closeLightbox(); });
+  function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
 
   // ═══════════════════════════════════════════════
-  //  RENDER FUNCTIONS
+  //  RENDER THREADS
   // ═══════════════════════════════════════════════
   function renderThreads() {
     const grid = document.getElementById('threadGrid');
     const data = threadsData[currentLang];
     grid.innerHTML = data.map(t => `
       <div class="thread-card">
-        <div class="thread-meta">
-          <span class="thread-tag">${t.tag}</span>
-          <span class="thread-likes">${t.likes}</span>
+        <div class="thread-img-wrap">
+          <img class="thread-img" src="${t.img}" alt="${t.title}" loading="lazy"/>
+          <span class="thread-img-tag">${t.tag}</span>
+          <span class="thread-img-likes">${t.likes}</span>
         </div>
-        <h3>${t.title}</h3>
-        <p>${t.desc}</p>
-        <div class="thread-footer">
-          <div class="thread-author">
-            <div class="avatar">${t.avatar}</div>
-            <span class="author-name">${t.author}</span>
+        <div class="thread-body">
+          <h3>${t.title}</h3>
+          <p>${t.desc}</p>
+          <a class="thread-read-more" href="#">
+            ${currentLang==='id'?'Baca selengkapnya':'Read more'} <i class="fas fa-arrow-right"></i>
+          </a>
+          <div class="thread-footer">
+            <div class="thread-author">
+              <div class="avatar">${t.avatar}</div>
+              <span class="author-name">${t.author}</span>
+            </div>
+            <span class="thread-time">${t.time}</span>
           </div>
-          <span class="thread-time">${t.time}</span>
         </div>
       </div>
     `).join('');
     observeCards();
   }
 
+  // ═══════════════════════════════════════════════
+  //  RENDER AREAS
+  // ═══════════════════════════════════════════════
+  const areasData = {
+    id:[
+      {emoji:"🎓",name:"Rawamangun",desc:"Pusat edukasi & kuliner hits"},
+      {emoji:"🏙️",name:"Cawang",desc:"Simpang transportasi utama"},
+      {emoji:"🌊",name:"Duren Sawit",desc:"Surga nongkrong BKT"},
+      {emoji:"✈️",name:"Halim",desc:"Bandara & kawasan bersejarah"},
+      {emoji:"🌿",name:"Cibubur",desc:"Residensial & alam hijau"},
+      {emoji:"🛍️",name:"Kramat Jati",desc:"Pusat perdagangan besar"},
+      {emoji:"🏘️",name:"Cipinang",desc:"Kuliner legendaris & pasar"},
+      {emoji:"🌸",name:"Matraman",desc:"Batas kota & pusat budaya"},
+      {emoji:"🎪",name:"Jatinegara",desc:"Pusat perbelanjaan rakyat"},
+      {emoji:"🏡",name:"Pulo Gadung",desc:"Kawasan industri & hunian"}
+    ],
+    en:[
+      {emoji:"🎓",name:"Rawamangun",desc:"Education hub & trendy food"},
+      {emoji:"🏙️",name:"Cawang",desc:"Major transport junction"},
+      {emoji:"🌊",name:"Duren Sawit",desc:"BKT canal hangout spot"},
+      {emoji:"✈️",name:"Halim",desc:"Airport & historic area"},
+      {emoji:"🌿",name:"Cibubur",desc:"Residential & green nature"},
+      {emoji:"🛍️",name:"Kramat Jati",desc:"Major trading center"},
+      {emoji:"🏘️",name:"Cipinang",desc:"Legendary food & market"},
+      {emoji:"🌸",name:"Matraman",desc:"City border & cultural hub"},
+      {emoji:"🎪",name:"Jatinegara",desc:"People's shopping center"},
+      {emoji:"🏡",name:"Pulo Gadung",desc:"Industrial & residential area"}
+    ]
+  };
+
   function renderAreas() {
     const grid = document.getElementById('areasGrid');
-    const data = areasData[currentLang];
-    grid.innerHTML = data.map(a => `
+    grid.innerHTML = areasData[currentLang].map(a => `
       <div class="area-card">
         <div class="area-emoji">${a.emoji}</div>
         <div class="area-name">${a.name}</div>
